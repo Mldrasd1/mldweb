@@ -11,10 +11,11 @@ export default function Home() {
         <h2 className="text-4xl font-bold text-blue-600 mb-2">Welcome</h2>
         <p className="text-gray-600 text-lg mb-6">How can we help you?</p>
 
-        <h3 className="text-2xl font-semibold mb-3">Lets give it a try</h3>
+        <h3 className="text-2xl font-semibold mb-3"> lets give it a try</h3>
         <p className="text-gray-500 mb-6 leading-relaxed max-w-md mx-auto md:mx-0">
-          
-          Book, view, and organize your appointments all in one place. Our system is designed to save you time and keep you organized, whether you're booking for yourself or managing multiple schedules.
+          Book, view, and organize your appointments all in one place.
+           Our system is designed to save you time and keep you organized, 
+           whether youre booking for yourself or managing multiple schedules.
         </p>
 
         <div className="flex gap-4 justify-center md:justify-start mr-auto max-w-md  ">
