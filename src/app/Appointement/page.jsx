@@ -42,6 +42,7 @@ export default function AppointementPage() {
    */
  const [appointments, setAppointments] = useState([]);
   useEffect(() => {
+    //hello
     // Fetch appointments from the backend API
     axios.get('/api/appointment')
       .then(response => {
