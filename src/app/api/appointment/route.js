@@ -26,20 +26,3 @@ export async function GET() {
       { status: 500 }
     );
   }}
-  export async function DELETE(request) {
-    try {
-      await connectToDB();
-      const { searchParams } = new URL(request.url);
-      const id = searchParams.get('id');
-      if (!id) {
-        return NextResponse.json({ message: "Appointment ID is required" }, { status: 400 });
-      }
-      await Appointment.findByIdAndDelete(id);
-      return NextResponse.json({ message: "Appointment deleted successfully" }, { status: 200 });
-    } catch (error) {
-      console.error("Error deleting appointment:", error);
-      return NextResponse.json(
-        { message: "Failed to delete appointment" },
-        { status: 500 }
-      );
-    } }

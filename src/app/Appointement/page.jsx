@@ -58,17 +58,6 @@ export default function AppointementPage() {
     { id: 2, name: 'Jane Smith', time: '11:00 AM', note: 'Follow-up' ,email:'hello@gmaoil,com'  },
     { id: 3, name: 'Alice Johnson', time: '01:00 PM', note: 'Consultation',email:'hello@gmaoil,com'   },
   ];
-  function deleteAppointment(id) {
-  axios.delete(`/api/appointment?id=${id}`)
-    .then(() => {
-      toast.success('Appointment deleted successfully!');
-      setAppointments(prev => prev.filter(appointment => appointment.id !== id));
-    })
-    .catch(error => {
-      console.error('There was an error deleting the appointment!', error);
-      toast.error('Failed to delete appointment');
-    });
-}
 
   return (
     appointments.length === 0 ? (
@@ -86,7 +75,7 @@ export default function AppointementPage() {
             <p className="text-gray-600 mb-1">Time: {appointment.time}</p>
             <p className="text-gray-600 mb-1">Email: {appointment.email}</p>
             <p className="text-gray-600">Note: {appointment.note}</p>
-            <button onClick={()=> deleteAppointment(appointment.id)} className=" mt-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-full px-6 py-2 shadow-md hover:opacity-90 transition">
+            <button  className=" mt-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-full px-6 py-2 shadow-md hover:opacity-90 transition">
                 delete
               </button>
           </div>

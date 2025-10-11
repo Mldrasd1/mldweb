@@ -19,6 +19,10 @@ export default function BookingPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      if (!formData.name || !formData.email || !formData.date || !formData.note) {
+        toast.error('Please fill in all required fields.');
+        return;
+      }
       const response = await axios.post('/api/appointment', formData);
      toast.success('Booking submitted successfully!');
       setFormData({
@@ -38,6 +42,7 @@ export default function BookingPage() {
       <form className="flex flex-col items-center p-6 rounded-lg shadow-neutral-900/50 shadow-2xl bg-white/10 backdrop-blur-sm  w-80 ">
         <div>
           <input
+          required
           value={formData.name}
           onChange={handleChange}
           name='name'
@@ -48,6 +53,7 @@ export default function BookingPage() {
         </div>
         <div>
           <input
+          required
           value={formData.email}
           onChange={handleChange}
           name='email'
@@ -57,11 +63,11 @@ export default function BookingPage() {
           />
         </div>
         <div>
-          <input onChange={handleChange} value={formData.date} name='date' type="datetime-local" className="border border-gray-900 rounded-md p-2 mb-4 w-64" />
+          <input required onChange={handleChange} value={formData.date} name='date' type="datetime-local" className="border border-gray-900 rounded-md p-2 mb-4 w-64" />
         </div>
         <div>
           <div>
-            <textarea
+            <textarea required
             value={formData.note}
             onChange={handleChange}
             name='note'
