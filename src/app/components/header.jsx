@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import SurpriseName from "./supee";
 
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ export default function Header() {
         {/* 🔹 الشعار */}
         <div className="flex items-center gap-2 mb-4 md:mb-0">
           <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-          <h1 className="font-bold text-lg text-gray-700">MLDRASD</h1>
+          <SurpriseName name="MLDRASD" />
         </div>
 
         {/* 🔹 زر القائمة للهاتف */}
