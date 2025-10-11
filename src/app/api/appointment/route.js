@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import connectToDB from "@/app/lib/db";
-import Appointment from "@/app/models/apoinment";
+import Appointment from "@/models/Appointment";
 export async function POST(request) {
   try {
     await connectToDB();
@@ -26,3 +26,4 @@ export async function GET() {
       { status: 500 }
     );
   }}
+
