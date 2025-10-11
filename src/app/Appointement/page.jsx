@@ -22,10 +22,8 @@ export default function AppointementPage() {
     { id: 3, name: 'Alice Johnson', time: '01:00 PM', note: 'Consultation',email:'hello@gmaoil,com'   },
   ];
  function deleteAppointment(id) {
-    // Send a DELETE request to the backend API
-    axios.delete(`/api/appointement/${id}`
-       
-    ) 
+    // Send a DELETE request to the backend API (use correct endpoint and query param)
+    axios.delete(`/api/appointment?id=${id}`)
       .then(response => {
         // Remove the deleted appointment from the state
         setAppointments(prev => prev.filter(appointment => appointment._id !== id));

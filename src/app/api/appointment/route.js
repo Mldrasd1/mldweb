@@ -29,3 +29,39 @@ export async function GET() {
   }
 }
 
+export async function DELETE(request) {
+  try {
+    await connectToDB();
+
+    // Try to get id from query string first
+    const url = new URL(request.url);
+    const idFromQuery = url.searchParams.get("id");
+
+    let id = idFromQuery;
+
+    // If not provided in query, try reading JSON body
+    if (!id) {
+      try {
+        const body = await request.json();
+        id = body?.id || body?._id;
+      } catch (e) {
+        // ignore JSON parse errors; id may be absent
+      }
+    }
+
+    if (!id) {
+      return NextResponse.json({ message: "Missing id for delete" }, { status: 400 });
+    }
+
+    const deleted = await Appointment.findByIdAndDelete(id);
+    if (!deleted) {
+      return NextResponse.json({ message: "Appointment not found" }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: "Appointment deleted" }, { status: 200 });
+  } catch (error) {
+    console.error("Error deleting appointment:", error);
+    return NextResponse.json({ message: "Failed to delete appointment" }, { status: 500 });
+  }
+}
+
