@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import SurpriseName from "./supee";
-
 import Link from "next/link";
 
 export default function Header() {
