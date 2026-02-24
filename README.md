@@ -235,13 +235,8 @@ npm run lint     # فحص جودة الكود بـ ESLint
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
----
-
-## 📝 الترخيص | License
-
-هذا المشروع خاص وغير مرخص للاستخدام العام.  
-This project is private and not licensed for public use.
+--
 
 ---
 
-Made with ❤️ by [Mldrasd1](https://github.com/Mldrasd1)
+Made  by Mldrasd1
