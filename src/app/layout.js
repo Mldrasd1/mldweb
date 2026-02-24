@@ -5,12 +5,12 @@ import { Toaster } from "react-hot-toast";
 import ThemeProvider from "./components/ThemeProvider";
 
 const geistSans = localFont({
-  src: "../../node_modules/next/dist/esm/next-devtools/server/font/geist-latin.woff2",
+  src: "./fonts/GeistVF.woff2",
   variable: "--font-geist-sans",
 });
 
 const geistMono = localFont({
-  src: "../../node_modules/next/dist/esm/next-devtools/server/font/geist-mono-latin.woff2",
+  src: "./fonts/GeistMonoVF.woff2",
   variable: "--font-geist-mono",
 });
 
